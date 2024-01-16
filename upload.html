@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .addfile {
+            width: 300px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 15px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .description {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="description">
+        <h2>What We Do</h2>
+        <p>
+            Welcome to our file upload website! This platform allows you to upload PowerPoint files.
+            Once uploaded, it replaces important words in the presentation with links to their corresponding Wikipedia articles.
+            Simply select your file, click "Upload," and explore the enriched content.
+        </p>
+    </div>
+    <h1>File Upload</h1>
+    <form class="addfile" method="POST" action="/" enctype="multipart/form-data">
+        {{template_form.hidden_tag()}}
+        <p>
+            {{template_form.file.label}} <br>
+            {{template_form.file(size=40)}}
+        </p>
+        <p><input type="submit" value="Upload"></p>
+    </form>
+</body>
+</html>
